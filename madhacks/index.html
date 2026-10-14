@@ -103,7 +103,7 @@ footer .wrap{padding-top:56px;padding-bottom:40px}.co{display:grid;gap:16px;marg
 @media(min-width:640px){.co{grid-template-columns:repeat(3,1fr)}}
 .co div{border-top:3px solid var(--sun);padding-top:8px}.co b{display:block;font-size:18px}.co span{color:#ccc;font-size:14px}
 .js .rv{opacity:0;transform:translateY(28px);transition:opacity .6s,transform .6s}.js .rv.on{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){.fl,.stick{animation:none}.js .rv{opacity:1;transform:none;transition:none}}
+@media (prefers-reduced-motion:reduce){.fl,.stick{animation:none}}
 </style>
 </head>
 <body>
@@ -298,7 +298,7 @@ footer .wrap{padding-top:56px;padding-bottom:40px}.co{display:grid;gap:16px;marg
 <script>
 (function(){
   var rv=document.querySelectorAll('.rv');
-  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{threshold:.12});rv.forEach(function(r){io.observe(r)})}
+  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{threshold:0,rootMargin:'0px 0px -8% 0px'});rv.forEach(function(r){io.observe(r)})}
   else rv.forEach(function(r){r.classList.add('on')});
   var f=document.getElementById('f'),err=document.getElementById('err'),done=document.getElementById('done'),msg=document.getElementById('msg');
   var TO='918113841677';
