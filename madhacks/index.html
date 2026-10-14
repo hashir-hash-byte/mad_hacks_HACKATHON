@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MAD HACKS 2026 | Bearys Institute of Technology</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--orchid:#d95ee8;--pink:#f0558e;--sun:#ffd60a;--lime:#62e05a;--ink:#000;--paper:#fff;--card:#fff;--cardtx:#111;
+--disp:"Bowlby One","Impact","Arial Black",sans-serif;--body:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light dark}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--card:#17111a;--cardtx:#f6f0f8}}
+:root[data-theme="dark"]{--card:#17111a;--cardtx:#f6f0f8}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 56px);scroll-behavior:smooth}
+*,*:before,*:after{box-sizing:inherit}
+body{margin:0;background:var(--orchid);color:var(--ink);font:400 17px/1.55 var(--body);overflow-x:hidden}
+h1,h2,h3{font-family:var(--disp);font-weight:400;line-height:1.02;margin:0}
+a{color:inherit}
+.wrap{max-width:880px;margin:0 auto;padding:56px 20px}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 16px;background:var(--ink);color:var(--paper)}
+.bar b{font:400 17px var(--disp);color:var(--sun)}
+.btn{display:inline-block;border:0;cursor:pointer;font:700 16px var(--body);padding:13px 22px;background:var(--sun);color:#000;text-decoration:none;clip-path:polygon(0 8%,4% 0,35% 6%,70% 0,100% 7%,98% 55%,100% 94%,60% 100%,25% 94%,0 100%,2% 50%)}
+.btn.sm{padding:8px 16px;font-size:14px}.btn.pk{background:var(--pink);color:#fff}
+:focus-visible{outline:3px solid var(--lime);outline-offset:3px}
+/* hero */
+.hero{background:var(--orchid);text-align:center;padding:40px 16px 64px;position:relative}
+.hero small{display:block;font-weight:700;color:#fff;font-size:15px;letter-spacing:.02em}
+.disc{background:var(--ink);border-radius:50%;max-width:520px;margin:28px auto 0;padding:15% 6%;position:relative}
+.strip{display:block;font-family:var(--disp);padding:.06em .3em;margin:0 auto;width:fit-content;clip-path:polygon(0 12%,6% 0,30% 8%,62% 0,94% 6%,100% 0,97% 50%,100% 100%,70% 92%,38% 100%,8% 93%,0 100%,3% 52%)}
+.s1{background:var(--sun);color:#000;font-size:clamp(54px,17vw,118px);transform:rotate(-2deg)}
+.s2{background:var(--pink);color:var(--sun);font-size:clamp(54px,17vw,118px);transform:rotate(1.5deg);margin-top:-.08em}
+.yr{font-family:var(--disp);color:#fff;font-size:clamp(40px,13vw,88px);margin-top:10px}
+.stick{position:absolute;right:-4px;top:-14px;background:#2b2b2b;color:#fff;font:400 18px/1.1 var(--disp);padding:14px 16px;transform:rotate(9deg);animation:pop 1s .3s both}
+@keyframes pop{from{transform:rotate(30deg) scale(.2);opacity:0}}
+@media (prefers-reduced-motion:reduce){.stick{animation:none}html{scroll-behavior:auto}}
+.tag{font-size:19px;font-weight:700;color:#fff;margin:26px auto 22px;max-width:30ch}
+.four{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:0 0 26px;padding:0;list-style:none}
+.four li{background:#000;color:#fff;font-weight:700;padding:6px 14px;border-radius:99px}
+/* sections */
+.yel{background:var(--sun)}.blk{background:var(--ink);color:#fff}.pnk{background:var(--pink);color:#fff}
+h2{font-size:clamp(34px,9vw,58px);margin-bottom:20px}
+.lead{font-size:20px;max-width:34em}
+/* themes */
+.theme{padding:0}.theme .wrap{padding-top:48px;padding-bottom:48px}
+.theme h3{font-size:clamp(32px,8.5vw,56px);margin-bottom:6px}
+.theme .one{font-size:19px;font-weight:700;margin:0 0 14px}
+.theme ul,.rules ul{padding-left:1.2em;margin:0}.theme li,.rules li{margin:7px 0}
+.ico{font-size:44px;display:block;margin-bottom:6px}
+/* timeline */
+.tl{list-style:none;padding:0;margin:0;border-left:4px solid var(--sun)}
+.tl li{padding:0 0 18px 18px;position:relative}
+.tl li:before{content:"";position:absolute;left:-11px;top:6px;width:18px;height:18px;background:var(--pink);border-radius:50%;border:3px solid #000}
+.tl b{display:block;color:var(--sun)}
+/* cards */
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.box{background:var(--card);color:var(--cardtx);padding:20px;border:3px solid #000;border-radius:6px 22px 6px 22px}
+.box h3{font-size:24px;margin-bottom:10px}.box ul{padding-left:1.1em;margin:0}.box li{margin:6px 0}
+/* form */
+form{background:var(--card);color:var(--cardtx);border:4px solid #000;padding:22px 18px;border-radius:6px 28px 6px 28px;box-shadow:8px 8px 0 #000}
+label,legend{display:block;font-weight:700;margin:16px 0 6px;padding:0}
+input[type=text]{width:100%;font:500 17px var(--body);padding:12px;border:2px solid #000;border-radius:6px;background:#fff;color:#111}
+.mem{display:grid;gap:10px;grid-template-columns:1fr}@media(min-width:560px){.mem{grid-template-columns:1fr 1fr}}
+fieldset{border:0;padding:0;margin:0}
+.opt{display:flex;gap:12px;align-items:flex-start;border:3px solid #000;border-radius:8px;padding:12px;margin:8px 0;cursor:pointer;background:#fff;color:#111;font-weight:500}
+.opt input{margin-top:5px;width:20px;height:20px;accent-color:#f0558e;flex:none}
+.opt:has(input:checked){background:var(--sun);box-shadow:4px 4px 0 #000}
+.opt b{display:block;font-family:var(--disp);font-weight:400;font-size:19px}
+.fee{display:flex;justify-content:space-between;align-items:center;gap:12px;background:#000;color:#fff;padding:14px 16px;margin:20px 0 14px;border-radius:8px}
+.fee b{font:400 30px var(--disp);color:var(--sun)}
+.err{color:#d11;font-weight:700;min-height:1.4em;margin:8px 0}
+#done{display:none}#done pre{white-space:pre-wrap;background:#f3f3f3;color:#111;padding:14px;border-radius:6px;font:14px/1.5 var(--body)}
+.row{display:flex;flex-wrap:wrap;gap:12px;margin-top:12px}
+footer{background:#000;color:#fff;text-align:center}
+footer .wrap{padding-top:40px;padding-bottom:40px}.co{display:grid;gap:14px;margin:22px 0}
+@media(min-width:640px){.co{grid-template-columns:repeat(3,1fr)}}
+.co div{border-top:3px solid var(--sun);padding-top:8px}.co b{display:block;font-size:18px}.co span{color:#ccc;font-size:14px}
+</style>
+</head>
+<body>
+<div class="bar"><b>MAD HACKS</b><a class="btn sm" href="#register">Register</a></div>
+
+<header class="hero">
+  <small>BEARYS INSTITUTE OF TECHNOLOGY, MANGALORE</small>
+  <small>DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING</small>
+  <div class="disc">
+    <div class="stick">28TH<br>OCT<br>2026</div>
+    <h1><span class="strip s1">MAD</span><span class="strip s2">HACKS</span></h1>
+    <div class="yr">2026</div>
+  </div>
+  <p class="tag">24 hours. Build the most gloriously useless thing you can.</p>
+  <ul class="four"><li>Ideate</li><li>Build</li><li>Collaborate</li><li>Showcase</li></ul>
+  <a class="btn" href="#register">Register your team</a>
+</header>
+
+<section class="yel"><div class="wrap">
+  <h2>Build something nobody needs.</h2>
+  <p class="lead">MAD HACKS is an internal college hackathon with a twist: the project has to be useless, and it still has to work. Teams of four get 24 hours to turn a bad idea into a working prototype, then demo it live in 3 minutes.</p>
+</div></section>
+
+<section class="blk"><div class="wrap"><h2>Pick one theme</h2><p class="lead">Every team chooses one of three. Scroll through them and decide how you want to waste your night.</p></div></section>
+
+<section class="theme pnk"><div class="wrap">
+  <span class="ico">🔧</span><h3>Theme 1: Useless Hardware</h3>
+  <p class="one">A gadget that solves a problem nobody has.</p>
+  <ul>
+    <li>Build a machine or contraption from components, junk or old gadgets.</li>
+    <li>Bring your own microcontroller, sensors, motors, wires and batteries.</li>
+    <li>Battery or USB power only. No mains-voltage hardware.</li>
+    <li>Phone sensors, old gadgets and borrowed lab kits (arranged with a faculty member) are welcome.</li>
+    <li>Keep it safe to touch: no sharp edges, hot parts or exposed wiring. The audience will try it.</li>
+    <li>Soldering needs a faculty coordinator's approval.</li>
+    <li>Record a short video of it working, in case it fails during the demo.</li>
+  </ul>
+</div></section>
+
+<section class="theme yel"><div class="wrap">
+  <span class="ico">⚙️</span><h3>Theme 2: Over-Engineered Solutions</h3>
+  <p class="one">Take a simple everyday task and solve it in the most complicated way possible.</p>
+  <ul>
+    <li>The solution must still finish the task from start to end.</li>
+    <li>Show the complexity in your demo: a diagram, or a count of the steps involved.</li>
+    <li>Software, hardware or a mix of both. Free tools only.</li>
+  </ul>
+</div></section>
+
+<section class="theme blk"><div class="wrap">
+  <span class="ico">💻</span><h3>Theme 3: Useless Software</h3>
+  <p class="one">Websites, apps, bots, games or AI projects that are delightfully pointless.</p>
+  <ul>
+    <li>Annoying or pointless is fine. Harmful is not: no malicious code, no collecting real personal data, nothing that locks up a device.</li>
+    <li>No rapidly flashing lights or very loud sounds.</li>
+    <li>Keep a local copy that runs without the internet.</li>
+    <li>Using AI? Stick to free tiers or models on your own laptop, keep API keys private, don't imitate real people, and check the output for offensive content before the demo.</li>
+    <li>Test the demo on the machine you'll present from, and tell the audience which tools and models you used.</li>
+  </ul>
+</div></section>
+
+<section class="blk" style="border-top:4px solid var(--sun)"><div class="wrap">
+  <h2>Schedule</h2>
+  <p>Hacking runs from 10:30 am on 28 Oct to 10:30 am on 29 Oct. All times IST.</p>
+  <ol class="tl">
+    <li><b>28 Oct, 9:45 to 10:30 am</b>Inauguration</li>
+    <li><b>28 Oct, 10:30 am</b>Hackathon begins. Start working on your ideas.</li>
+    <li><b>28 Oct, 1:00 pm</b>First progress report. Your idea must be ready.</li>
+    <li><b>28 Oct, 12 midnight</b>Second progress report. Explain what you changed after the judges' input.</li>
+    <li><b>29 Oct, 10:30 am</b>Hacking ends. Prototypes are final.</li>
+    <li><b>29 Oct, 10:30 to 11:30 am</b>Final evaluation: 3-minute live demos, rated by judges and audience.</li>
+    <li><b>29 Oct, 11:30 am to 12 pm</b>Prize ceremony and closing. The split with evaluation may shift slightly, but we finish by 12 pm.</li>
+  </ol>
+</div></section>
+
+<section class="yel rules"><div class="wrap">
+  <h2>Rules</h2>
+  <div class="grid">
+    <div class="box"><h3>Teams and build</h3><ul>
+      <li>Exactly 4 members per team.</li>
+      <li>Every team must build a prototype.</li>
+      <li>All work starts after the opening session. Pre-built projects are not eligible.</li>
+      <li>Any tools are allowed, AI assistants included, but be honest about what you used.</li></ul></div>
+    <div class="box"><h3>Progress reports</h3><ul>
+      <li>Ideas must be ready by 1:00 pm.</li>
+      <li>At 1:00 pm the judges ask what your idea is. You're scored on how fluently you answer, so every member should be able to speak.</li>
+      <li>At midnight, explain the changes you made from their input.</li>
+      <li>You can ask the judges for mentorship at any time.</li></ul></div>
+    <div class="box"><h3>Safety and conduct</h3><ul>
+      <li>Projects must be safe and non-offensive.</li>
+      <li>No mains-voltage hardware. No jokes aimed at individuals.</li>
+      <li>Be respectful to every team, judge and volunteer. Keep noise down at night.</li>
+      <li>Report injuries, damaged equipment or unsafe wiring to the organizers right away.</li></ul></div>
+    <div class="box"><h3>Demo and scoring</h3><ul>
+      <li>Every team gives a 3-minute live demo, and the audience tries it where possible.</li>
+      <li>Say what it does, why it's useless, and what you built during the event.</li>
+      <li>Final score = judges' evaluation + the audience's average rating.</li>
+      <li>The top 3 teams get prizes.</li></ul></div>
+  </div>
+</div></section>
+
+<section class="pnk"><div class="wrap">
+  <h2>What to bring</h2>
+  <p>The organizers provide no equipment, and meals are not provided.</p>
+  <div class="grid">
+    <div class="box"><h3>Every team</h3><ul>
+      <li>Laptops and chargers for everyone who will code</li>
+      <li>Extension boards. Power points are limited.</li>
+      <li>Phones and chargers (sensors, camera, hotspot)</li>
+      <li>College ID cards</li>
+      <li>Water bottle, light jacket, personal items for the night</li>
+      <li>Your own food, or plan to order in</li></ul></div>
+    <div class="box"><h3>Hardware teams</h3><ul>
+      <li>Microcontrollers, sensors, motors, buzzers, wires, batteries</li>
+      <li>Screwdriver, tape, wire cutters</li>
+      <li>Old gadgets, spare parts, cardboard</li>
+      <li>Lab kits, if arranged with a faculty member beforehand</li></ul></div>
+    <div class="box"><h3>Stay sane</h3><ul>
+      <li>Install tools and offline docs before the event.</li>
+      <li>Back up often with Git or a cloud drive.</li>
+      <li>Keep a mobile hotspot ready.</li>
+      <li>Rest in turns, but keep at least one member with the project.</li>
+      <li>Tell a volunteer before leaving the venue at night. Feeling unwell? Tell an organizer immediately.</li></ul></div>
+  </div>
+</div></section>
+
+<section class="blk" id="register"><div class="wrap">
+  <h2>Register your team</h2>
+  <p class="lead">4 members, one theme. ₹50 per member, ₹200 per team.</p>
+  <form id="f" novalidate>
+    <label for="team">Team name</label>
+    <input type="text" id="team" autocomplete="off" required>
+    <label>Team members (all 4)</label>
+    <div class="mem">
+      <input type="text" aria-label="Member 1 name" placeholder="Member 1 (team lead)" required>
+      <input type="text" aria-label="Member 2 name" placeholder="Member 2" required>
+      <input type="text" aria-label="Member 3 name" placeholder="Member 3" required>
+      <input type="text" aria-label="Member 4 name" placeholder="Member 4" required>
+    </div>
+    <fieldset><legend>Your theme (pick one)</legend>
+      <label class="opt"><input type="radio" name="theme" value="Theme 1: Useless Hardware"><span><b>Theme 1: Useless Hardware</b>A gadget nobody asked for</span></label>
+      <label class="opt"><input type="radio" name="theme" value="Theme 2: Over-Engineered Solutions"><span><b>Theme 2: Over-Engineered Solutions</b>A simple task, made absurdly complex</span></label>
+      <label class="opt"><input type="radio" name="theme" value="Theme 3: Useless Software"><span><b>Theme 3: Useless Software</b>An app, bot or game with no point</span></label>
+    </fieldset>
+    <div class="fee"><span>Registration fee (₹50 × 4 members)</span><b>₹200</b></div>
+    <div class="err" id="err" role="alert"></div>
+    <button class="btn" type="submit">Send registration</button>
+  </form>
+
+  <div id="done" class="box" style="margin-top:20px">
+    <h3>Almost done</h3>
+    <p>Send this message to the coordinator on WhatsApp and pay the ₹200 team fee as they instruct. Your spot is confirmed once they reply.</p>
+    <pre id="msg"></pre>
+    <div class="row"><a class="btn pk" id="wa" target="_blank" rel="noopener" href="#">Send on WhatsApp</a><button class="btn" type="button" id="cp">Copy details</button></div>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <h2 style="color:var(--sun)">Questions?</h2>
+  <div class="co">
+    <div><b>Mr. Mohammed Sinan M</b><span>Faculty Coordinator</span><br><a href="tel:+919886737890">+91 98867 37890</a></div>
+    <div><b>Mohammed Jacil</b><span>Student Coordinator</span><br><a href="tel:+919964117575">+91 99641 17575</a></div>
+    <div><b>Mohammed Hashir</b><span>Student Coordinator</span><br><a href="tel:+918113841677">+91 81138 41677</a></div>
+  </div>
+  <small>Department of Computer Science and Engineering, Bearys Institute of Technology, Mangalore</small>
+</div></footer>
+
+<script>
+(function(){
+  var f=document.getElementById('f'),err=document.getElementById('err'),done=document.getElementById('done'),msg=document.getElementById('msg');
+  var TO='918113841677';
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var team=document.getElementById('team').value.trim();
+    var m=[].map.call(f.querySelectorAll('.mem input'),function(i){return i.value.trim()});
+    var t=f.querySelector('input[name=theme]:checked');
+    if(!team){err.textContent='Enter your team name.';return}
+    if(m.some(function(x){return !x})){err.textContent='Enter the names of all 4 members.';return}
+    if(!t){err.textContent='Pick one theme.';return}
+    err.textContent='';
+    var text='MAD HACKS 2026 registration\nTeam: '+team+'\nMembers:\n'+m.map(function(n,i){return (i+1)+'. '+n}).join('\n')+'\nTheme: '+t.value+'\nFee: Rs 200 (Rs 50 x 4 members)';
+    msg.textContent=text;
+    document.getElementById('wa').href='https://wa.me/'+TO+'?text='+encodeURIComponent(text);
+    done.style.display='block';f.style.display='none';
+    done.scrollIntoView({behavior:'smooth',block:'start'});
+  });
+  document.getElementById('cp').addEventListener('click',function(){
+    var b=this;
+    try{navigator.clipboard.writeText(msg.textContent).then(function(){b.textContent='Copied'},function(){b.textContent='Select the text and copy'})}
+    catch(x){b.textContent='Select the text and copy'}
+  });
+})();
+</script>
+</body>
+</html>
