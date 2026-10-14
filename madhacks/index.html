@@ -4,61 +4,86 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>MAD HACKS 2026 | Bearys Institute of Technology</title>
+<script>document.documentElement.classList.add('js')</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-:root{--orchid:#d95ee8;--pink:#f0558e;--sun:#ffd60a;--lime:#62e05a;--ink:#000;--paper:#fff;--card:#fff;--cardtx:#111;
+:root{--orchid:#d95ee8;--pink:#f0558e;--sun:#ffd60a;--lime:#62e05a;--ink:#000;--card:#fff;--cardtx:#111;
 --disp:"Bowlby One","Impact","Arial Black",sans-serif;--body:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
 box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light dark}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--card:#17111a;--cardtx:#f6f0f8}}
 :root[data-theme="dark"]{--card:#17111a;--cardtx:#f6f0f8}
-html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 56px);scroll-behavior:smooth}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 64px);scroll-behavior:smooth}
 *,*:before,*:after{box-sizing:inherit}
-body{margin:0;background:var(--orchid);color:var(--ink);font:400 17px/1.55 var(--body);overflow-x:hidden}
-h1,h2,h3{font-family:var(--disp);font-weight:400;line-height:1.02;margin:0}
-a{color:inherit}
-.wrap{max-width:880px;margin:0 auto;padding:56px 20px}
-.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 16px;background:var(--ink);color:var(--paper)}
-.bar b{font:400 17px var(--disp);color:var(--sun)}
-.btn{display:inline-block;border:0;cursor:pointer;font:700 16px var(--body);padding:13px 22px;background:var(--sun);color:#000;text-decoration:none;clip-path:polygon(0 8%,4% 0,35% 6%,70% 0,100% 7%,98% 55%,100% 94%,60% 100%,25% 94%,0 100%,2% 50%)}
-.btn.sm{padding:8px 16px;font-size:14px}.btn.pk{background:var(--pink);color:#fff}
+body{margin:0;background:var(--orchid);color:var(--ink);font:400 17px/1.6 var(--body);overflow-x:hidden}
+h1,h2,h3{font-family:var(--disp);font-weight:400;line-height:1.04;margin:0}
+a{color:inherit}ul{margin:0}
+.wrap{max-width:1040px;margin:0 auto;padding:84px 20px;position:relative}
+section{position:relative;overflow:hidden}
+.dots{background-image:radial-gradient(rgba(0,0,0,.16) 2px,transparent 2.5px);background-size:26px 26px}
+.kick{display:inline-block;background:#000;color:var(--sun);font:700 13px var(--body);letter-spacing:.14em;text-transform:uppercase;padding:6px 12px;border-radius:99px;margin-bottom:14px}
+h2{font-size:clamp(36px,8vw,64px);margin-bottom:16px}
+.lead{font-size:20px;max-width:36em;margin:0 0 30px}
+.btn{display:inline-block;border:0;cursor:pointer;font:700 16px var(--body);padding:14px 26px;background:var(--sun);color:#000;text-decoration:none;transition:transform .15s;clip-path:polygon(0 8%,4% 0,35% 6%,70% 0,100% 7%,98% 55%,100% 94%,60% 100%,25% 94%,0 100%,2% 50%)}
+.btn:hover{transform:rotate(-2deg) scale(1.05)}.btn.sm{padding:8px 16px;font-size:14px}.btn.pk{background:var(--pink);color:#fff}
 :focus-visible{outline:3px solid var(--lime);outline-offset:3px}
+/* nav */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 18px;background:#000;color:#fff;border-bottom:3px solid var(--sun)}
+.bar b{font:400 19px var(--disp);color:var(--sun)}
+.bar nav{display:none;gap:22px;font-weight:700;font-size:15px}.bar nav a{text-decoration:none}.bar nav a:hover{color:var(--sun)}
+@media(min-width:820px){.bar nav{display:flex}}
 /* hero */
-.hero{background:var(--orchid);text-align:center;padding:40px 16px 64px;position:relative}
-.hero small{display:block;font-weight:700;color:#fff;font-size:15px;letter-spacing:.02em}
-.disc{background:var(--ink);border-radius:50%;max-width:520px;margin:28px auto 0;padding:15% 6%;position:relative}
+.hero{text-align:center}.hero .wrap{padding-top:50px;padding-bottom:0}
+.hero small{display:block;font-weight:700;color:#fff;font-size:14px;letter-spacing:.04em}
+.fl{position:absolute;font-size:clamp(36px,7vw,72px);opacity:.9;animation:fl 7s ease-in-out infinite;user-select:none;pointer-events:none}
+@keyframes fl{50%{transform:translateY(-18px) rotate(12deg)}}
+.disc{background:#000;border-radius:50%;max-width:500px;margin:24px auto 0;padding:15% 6%;position:relative;box-shadow:0 0 0 10px rgba(255,255,255,.25)}
 .strip{display:block;font-family:var(--disp);padding:.06em .3em;margin:0 auto;width:fit-content;clip-path:polygon(0 12%,6% 0,30% 8%,62% 0,94% 6%,100% 0,97% 50%,100% 100%,70% 92%,38% 100%,8% 93%,0 100%,3% 52%)}
 .s1{background:var(--sun);color:#000;font-size:clamp(54px,17vw,118px);transform:rotate(-2deg)}
 .s2{background:var(--pink);color:var(--sun);font-size:clamp(54px,17vw,118px);transform:rotate(1.5deg);margin-top:-.08em}
 .yr{font-family:var(--disp);color:#fff;font-size:clamp(40px,13vw,88px);margin-top:10px}
-.stick{position:absolute;right:-4px;top:-14px;background:#2b2b2b;color:#fff;font:400 18px/1.1 var(--disp);padding:14px 16px;transform:rotate(9deg);animation:pop 1s .3s both}
+.stick{position:absolute;right:-6px;top:-14px;background:#2b2b2b;color:#fff;font:400 18px/1.1 var(--disp);padding:14px 16px;transform:rotate(9deg);animation:pop 1s .3s both}
 @keyframes pop{from{transform:rotate(30deg) scale(.2);opacity:0}}
-@media (prefers-reduced-motion:reduce){.stick{animation:none}html{scroll-behavior:auto}}
-.tag{font-size:19px;font-weight:700;color:#fff;margin:26px auto 22px;max-width:30ch}
-.four{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:0 0 26px;padding:0;list-style:none}
-.four li{background:#000;color:#fff;font-weight:700;padding:6px 14px;border-radius:99px}
-/* sections */
-.yel{background:var(--sun)}.blk{background:var(--ink);color:#fff}.pnk{background:var(--pink);color:#fff}
-h2{font-size:clamp(34px,9vw,58px);margin-bottom:20px}
-.lead{font-size:20px;max-width:34em}
+.tag{font-size:21px;font-weight:700;color:#fff;margin:26px auto 18px;max-width:28ch}
+.stats{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:0 0 24px;padding:0;list-style:none}
+.stats li{background:#fff;border:3px solid #000;box-shadow:4px 4px 0 #000;padding:6px 16px;font-weight:700;border-radius:10px}
+.stats b{font:400 22px var(--disp);color:var(--pink);margin-right:6px}
+/* ticker */
+.tick{background:#000;color:var(--sun);font:400 22px var(--disp);padding:12px 0;transform:rotate(-1.4deg);margin:-14px -10px 0;position:relative;z-index:3;overflow:hidden;white-space:nowrap;border-block:3px solid var(--sun)}
+.tick div{display:inline-block;animation:tk 22s linear infinite}
+@keyframes tk{to{transform:translateX(-50%)}}
+/* about */
+.yel{background:var(--sun)}.blk{background:#000;color:#fff}.pnk{background:var(--pink);color:#fff}
+.steps{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));margin-top:10px}
+.step{background:#fff;border:3px solid #000;border-radius:6px 22px 6px 22px;padding:18px;box-shadow:6px 6px 0 #000}
+.step b{font:400 40px var(--disp);color:var(--pink);display:block}
 /* themes */
-.theme{padding:0}.theme .wrap{padding-top:48px;padding-bottom:48px}
-.theme h3{font-size:clamp(32px,8.5vw,56px);margin-bottom:6px}
-.theme .one{font-size:19px;font-weight:700;margin:0 0 14px}
-.theme ul,.rules ul{padding-left:1.2em;margin:0}.theme li,.rules li{margin:7px 0}
-.ico{font-size:44px;display:block;margin-bottom:6px}
-/* timeline */
-.tl{list-style:none;padding:0;margin:0;border-left:4px solid var(--sun)}
-.tl li{padding:0 0 18px 18px;position:relative}
-.tl li:before{content:"";position:absolute;left:-11px;top:6px;width:18px;height:18px;background:var(--pink);border-radius:50%;border:3px solid #000}
-.tl b{display:block;color:var(--sun)}
+.themes{display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(290px,1fr))}
+.th{border:4px solid #000;border-radius:8px 30px 8px 30px;padding:26px 22px;box-shadow:8px 8px 0 #000;transition:transform .2s;position:relative}
+.th:hover{transform:translate(-3px,-5px) rotate(-.8deg)}
+.th.a{background:var(--pink);color:#fff}.th.b{background:var(--sun)}.th.c{background:#fff}
+.th .n{position:absolute;right:16px;top:6px;font:400 70px var(--disp);opacity:.18}
+.th .ico{font-size:46px;display:block}.th h3{font-size:30px;margin:6px 0 8px}
+.th .one{font-weight:700;font-size:18px;margin:0 0 12px}.th ul{padding-left:1.1em}.th li{margin:7px 0}
+/* schedule */
+.days{display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.day{border:3px solid var(--sun);border-radius:8px 26px 8px 26px;padding:22px}
+.day h3{color:var(--sun);font-size:28px;margin-bottom:14px}
+.ev{display:grid;grid-template-columns:104px 1fr;gap:14px;padding:12px 0;border-top:2px dashed rgba(255,255,255,.3)}
+.ev:first-of-type{border-top:0}.ev time{font-weight:700;color:var(--sun);font-size:15px}.ev span{display:block}
+.ev.hot{background:var(--pink);margin:0 -12px;padding:12px;border-radius:10px;border:0}.ev.hot time{color:#fff}
 /* cards */
-.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
-.box{background:var(--card);color:var(--cardtx);padding:20px;border:3px solid #000;border-radius:6px 22px 6px 22px}
-.box h3{font-size:24px;margin-bottom:10px}.box ul{padding-left:1.1em;margin:0}.box li{margin:6px 0}
-/* form */
-form{background:var(--card);color:var(--cardtx);border:4px solid #000;padding:22px 18px;border-radius:6px 28px 6px 28px;box-shadow:8px 8px 0 #000}
-label,legend{display:block;font-weight:700;margin:16px 0 6px;padding:0}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.box{background:var(--card);color:var(--cardtx);padding:22px;border:3px solid #000;border-radius:6px 22px 6px 22px;box-shadow:6px 6px 0 #000}
+.box h3{font-size:22px;margin-bottom:10px}.box ul{padding-left:1.1em}.box li{margin:7px 0}
+.box.ck ul{list-style:none;padding:0}.box.ck li{padding-left:28px;position:relative}.box.ck li:before{content:"✓";position:absolute;left:0;top:0;width:20px;height:20px;background:var(--lime);border:2px solid #000;border-radius:5px;font-size:13px;line-height:16px;text-align:center;color:#000;font-weight:700}
+.note{font-weight:700;margin:0 0 26px}
+/* register */
+.reg{display:grid;gap:26px;align-items:start}@media(min-width:900px){.reg{grid-template-columns:1fr 1.5fr}}
+.price{background:#000;color:#fff;border-radius:8px 30px 8px 30px;padding:26px;text-align:center}
+.price b{display:block;font:400 76px/1 var(--disp);color:var(--sun)}.price p{margin:8px 0 0}
+form{background:var(--card);color:var(--cardtx);border:4px solid #000;padding:24px 20px;border-radius:6px 28px 6px 28px;box-shadow:8px 8px 0 #000}
+label,legend{display:block;font-weight:700;margin:16px 0 6px;padding:0}form>label:first-child{margin-top:0}
 input[type=text],input[type=email],input[type=tel]{width:100%;font:500 17px var(--body);padding:12px;border:2px solid #000;border-radius:6px;background:#fff;color:#111}
 .mem,.mem2{display:grid;gap:10px;grid-template-columns:1fr}@media(min-width:560px){.mem,.mem2{grid-template-columns:1fr 1fr}}
 fieldset{border:0;padding:0;margin:0}
@@ -72,103 +97,115 @@ fieldset{border:0;padding:0;margin:0}
 #done{display:none}#done pre{white-space:pre-wrap;background:#f3f3f3;color:#111;padding:14px;border-radius:6px;font:14px/1.5 var(--body)}
 .row{display:flex;flex-wrap:wrap;gap:12px;margin-top:12px}
 footer{background:#000;color:#fff;text-align:center}
-footer .wrap{padding-top:40px;padding-bottom:40px}.co{display:grid;gap:14px;margin:22px 0}
+footer .wrap{padding-top:56px;padding-bottom:40px}.co{display:grid;gap:16px;margin:24px 0}
 @media(min-width:640px){.co{grid-template-columns:repeat(3,1fr)}}
 .co div{border-top:3px solid var(--sun);padding-top:8px}.co b{display:block;font-size:18px}.co span{color:#ccc;font-size:14px}
+.js .rv{opacity:0;transform:translateY(28px);transition:opacity .6s,transform .6s}.js .rv.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}.js .rv{opacity:1;transform:none}}
 </style>
 </head>
 <body>
-<div class="bar"><b>MAD HACKS</b><a class="btn sm" href="#register">Register</a></div>
+<div class="bar"><b>MAD HACKS</b>
+  <nav><a href="#about">About</a><a href="#themes">Themes</a><a href="#schedule">Schedule</a><a href="#rules">Rules</a><a href="#bring">What to bring</a></nav>
+  <a class="btn sm" href="#register">Register</a></div>
 
-<header class="hero">
-  <small>BEARYS INSTITUTE OF TECHNOLOGY, MANGALORE</small>
-  <small>DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING</small>
-  <div class="disc">
-    <div class="stick">28TH<br>OCT<br>2026</div>
-    <h1><span class="strip s1">MAD</span><span class="strip s2">HACKS</span></h1>
-    <div class="yr">2026</div>
+<header class="hero dots">
+  <span class="fl" style="left:4%;top:12%">⚙️</span><span class="fl" style="right:5%;top:30%;animation-delay:-2s">🔧</span>
+  <span class="fl" style="left:8%;top:52%;animation-delay:-4s">💻</span><span class="fl" style="right:9%;top:6%;animation-delay:-1s">🤖</span>
+  <div class="wrap">
+    <small>BEARYS INSTITUTE OF TECHNOLOGY, MANGALORE</small>
+    <small>DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING</small>
+    <div class="disc">
+      <div class="stick">28TH<br>OCT<br>2026</div>
+      <h1><span class="strip s1">MAD</span><span class="strip s2">HACKS</span></h1>
+      <div class="yr">2026</div>
+    </div>
+    <p class="tag">24 hours. Build the most gloriously useless thing you can.</p>
+    <ul class="stats"><li><b>24</b>hours</li><li><b>4</b>per team</li><li><b>3</b>themes</li><li><b>₹200</b>per team</li></ul>
+    <a class="btn" href="#register">Register your team</a>
   </div>
-  <p class="tag">24 hours. Build the most gloriously useless thing you can.</p>
-  <ul class="four"><li>Ideate</li><li>Build</li><li>Collaborate</li><li>Showcase</li></ul>
-  <a class="btn" href="#register">Register your team</a>
 </header>
+<div class="tick" aria-hidden="true"><div>USELESS ★ BUT IT WORKS ★ OVER-ENGINEERED ★ NOBODY ASKED ★ 24 HOURS ★ USELESS ★ BUT IT WORKS ★ OVER-ENGINEERED ★ NOBODY ASKED ★ 24 HOURS ★ USELESS ★ BUT IT WORKS ★ OVER-ENGINEERED ★ NOBODY ASKED ★ 24 HOURS ★ </div></div>
 
-<section class="yel"><div class="wrap">
+<section class="yel" id="about"><div class="wrap rv">
+  <span class="kick">About</span>
   <h2>Build something nobody needs.</h2>
   <p class="lead">MAD HACKS is an internal college hackathon with a twist: the project has to be useless, and it still has to work. Teams of four get 24 hours to turn a bad idea into a working prototype, then demo it live in 3 minutes.</p>
+  <div class="steps"><div class="step"><b>01</b>Ideate</div><div class="step"><b>02</b>Build</div><div class="step"><b>03</b>Collaborate</div><div class="step"><b>04</b>Showcase</div></div>
 </div></section>
 
-<section class="blk"><div class="wrap"><h2>Pick one theme</h2><p class="lead">Every team chooses one of three. Scroll through them and decide how you want to waste your night.</p></div></section>
-
-<section class="theme pnk"><div class="wrap">
-  <span class="ico">🔧</span><h3>Theme 1: Useless Hardware</h3>
-  <p class="one">A gadget that solves a problem nobody has.</p>
-  <ul>
-    <li>Build a machine or contraption from components, junk or old gadgets.</li>
-    <li>Bring your own microcontroller, sensors, motors, wires and batteries.</li>
-    <li>Battery or USB power only. No mains-voltage hardware.</li>
-    <li>Phone sensors, old gadgets and borrowed lab kits (arranged with a faculty member) are welcome.</li>
-    <li>Keep it safe to touch: no sharp edges, hot parts or exposed wiring. The audience will try it.</li>
-    <li>Soldering needs a faculty coordinator's approval.</li>
-    <li>Record a short video of it working, in case it fails during the demo.</li>
-  </ul>
+<section class="dots" id="themes"><div class="wrap">
+  <span class="kick">Pick one theme</span>
+  <h2 class="rv">Choose how to waste your night.</h2>
+  <p class="lead rv">Every team chooses one of three.</p>
+  <div class="themes">
+    <article class="th a rv"><span class="n">1</span><span class="ico">🔧</span><h3>Useless Hardware</h3>
+      <p class="one">A gadget that solves a problem nobody has.</p>
+      <ul>
+        <li>Build a machine or contraption from components, junk or old gadgets.</li>
+        <li>Bring your own microcontroller, sensors, motors, wires and batteries.</li>
+        <li>Battery or USB power only. No mains-voltage hardware.</li>
+        <li>Phone sensors, old gadgets and borrowed lab kits (arranged with a faculty member) are welcome.</li>
+        <li>Keep it safe to touch: no sharp edges, hot parts or exposed wiring. The audience will try it.</li>
+        <li>Soldering needs a faculty coordinator's approval.</li>
+        <li>Record a short video of it working, in case it fails during the demo.</li>
+      </ul></article>
+    <article class="th b rv"><span class="n">2</span><span class="ico">⚙️</span><h3>Over-Engineered Solutions</h3>
+      <p class="one">Take a simple everyday task and solve it in the most complicated way possible.</p>
+      <ul>
+        <li>The solution must still finish the task from start to end.</li>
+        <li>Show the complexity in your demo: a diagram, or a count of the steps involved.</li>
+        <li>Software, hardware or a mix of both. Free tools only.</li>
+      </ul></article>
+    <article class="th c rv"><span class="n">3</span><span class="ico">💻</span><h3>Useless Software</h3>
+      <p class="one">Websites, apps, bots, games or AI projects that are delightfully pointless.</p>
+      <ul>
+        <li>Annoying or pointless is fine. Harmful is not: no malicious code, no collecting real personal data, nothing that locks up a device.</li>
+        <li>No rapidly flashing lights or very loud sounds.</li>
+        <li>Keep a local copy that runs without the internet.</li>
+        <li>Using AI? Stick to free tiers or models on your own laptop, keep API keys private, don't imitate real people, and check the output for offensive content before the demo.</li>
+        <li>Test the demo on the machine you'll present from, and tell the audience which tools and models you used.</li>
+      </ul></article>
+  </div>
 </div></section>
 
-<section class="theme yel"><div class="wrap">
-  <span class="ico">⚙️</span><h3>Theme 2: Over-Engineered Solutions</h3>
-  <p class="one">Take a simple everyday task and solve it in the most complicated way possible.</p>
-  <ul>
-    <li>The solution must still finish the task from start to end.</li>
-    <li>Show the complexity in your demo: a diagram, or a count of the steps involved.</li>
-    <li>Software, hardware or a mix of both. Free tools only.</li>
-  </ul>
+<section class="blk" id="schedule"><div class="wrap">
+  <span class="kick">Schedule</span>
+  <h2 class="rv">24 hours, all times IST.</h2>
+  <p class="lead rv">Hacking runs from 10:30 am on 28 Oct to 10:30 am on 29 Oct.</p>
+  <div class="days">
+    <div class="day rv"><h3>Day 1 · 28 Oct</h3>
+      <div class="ev"><time>9:45 to 10:30 am</time><span>Inauguration</span></div>
+      <div class="ev hot"><time>10:30 am</time><span>Hackathon begins. Start working on your ideas.</span></div>
+      <div class="ev"><time>1:00 pm</time><span>First progress report. Your idea must be ready.</span></div>
+      <div class="ev"><time>12 midnight</time><span>Second progress report. Explain what you changed after the judges' input.</span></div></div>
+    <div class="day rv"><h3>Day 2 · 29 Oct</h3>
+      <div class="ev hot"><time>10:30 am</time><span>Hacking ends. Prototypes are final.</span></div>
+      <div class="ev"><time>10:30 to 11:30 am</time><span>Final evaluation: 3-minute live demos, rated by judges and audience.</span></div>
+      <div class="ev"><time>11:30 am to 12 pm</time><span>Prize ceremony and closing. The split with evaluation may shift slightly, but we finish by 12 pm.</span></div></div>
+  </div>
 </div></section>
 
-<section class="theme blk"><div class="wrap">
-  <span class="ico">💻</span><h3>Theme 3: Useless Software</h3>
-  <p class="one">Websites, apps, bots, games or AI projects that are delightfully pointless.</p>
-  <ul>
-    <li>Annoying or pointless is fine. Harmful is not: no malicious code, no collecting real personal data, nothing that locks up a device.</li>
-    <li>No rapidly flashing lights or very loud sounds.</li>
-    <li>Keep a local copy that runs without the internet.</li>
-    <li>Using AI? Stick to free tiers or models on your own laptop, keep API keys private, don't imitate real people, and check the output for offensive content before the demo.</li>
-    <li>Test the demo on the machine you'll present from, and tell the audience which tools and models you used.</li>
-  </ul>
-</div></section>
-
-<section class="blk" style="border-top:4px solid var(--sun)"><div class="wrap">
-  <h2>Schedule</h2>
-  <p>Hacking runs from 10:30 am on 28 Oct to 10:30 am on 29 Oct. All times IST.</p>
-  <ol class="tl">
-    <li><b>28 Oct, 9:45 to 10:30 am</b>Inauguration</li>
-    <li><b>28 Oct, 10:30 am</b>Hackathon begins. Start working on your ideas.</li>
-    <li><b>28 Oct, 1:00 pm</b>First progress report. Your idea must be ready.</li>
-    <li><b>28 Oct, 12 midnight</b>Second progress report. Explain what you changed after the judges' input.</li>
-    <li><b>29 Oct, 10:30 am</b>Hacking ends. Prototypes are final.</li>
-    <li><b>29 Oct, 10:30 to 11:30 am</b>Final evaluation: 3-minute live demos, rated by judges and audience.</li>
-    <li><b>29 Oct, 11:30 am to 12 pm</b>Prize ceremony and closing. The split with evaluation may shift slightly, but we finish by 12 pm.</li>
-  </ol>
-</div></section>
-
-<section class="yel rules"><div class="wrap">
-  <h2>Rules</h2>
+<section class="yel dots" id="rules"><div class="wrap">
+  <span class="kick">Rules</span>
+  <h2 class="rv">Play fair. Stay safe.</h2>
   <div class="grid">
-    <div class="box"><h3>Teams and build</h3><ul>
+    <div class="box rv"><h3>Teams and build</h3><ul>
       <li>Exactly 4 members per team.</li>
       <li>Every team must build a prototype.</li>
       <li>All work starts after the opening session. Pre-built projects are not eligible.</li>
       <li>Any tools are allowed, AI assistants included, but be honest about what you used.</li></ul></div>
-    <div class="box"><h3>Progress reports</h3><ul>
+    <div class="box rv"><h3>Progress reports</h3><ul>
       <li>Ideas must be ready by 1:00 pm.</li>
       <li>At 1:00 pm the judges ask what your idea is. You're scored on how fluently you answer, so every member should be able to speak.</li>
       <li>At midnight, explain the changes you made from their input.</li>
       <li>You can ask the judges for mentorship at any time.</li></ul></div>
-    <div class="box"><h3>Safety and conduct</h3><ul>
+    <div class="box rv"><h3>Safety and conduct</h3><ul>
       <li>Projects must be safe and non-offensive.</li>
       <li>No mains-voltage hardware. No jokes aimed at individuals.</li>
       <li>Be respectful to every team, judge and volunteer. Keep noise down at night.</li>
       <li>Report injuries, damaged equipment or unsafe wiring to the organizers right away.</li></ul></div>
-    <div class="box"><h3>Demo and scoring</h3><ul>
+    <div class="box rv"><h3>Demo and scoring</h3><ul>
       <li>Every team gives a 3-minute live demo, and the audience tries it where possible.</li>
       <li>Say what it does, why it's useless, and what you built during the event.</li>
       <li>Final score = judges' evaluation + the audience's average rating.</li>
@@ -176,23 +213,24 @@ footer .wrap{padding-top:40px;padding-bottom:40px}.co{display:grid;gap:14px;marg
   </div>
 </div></section>
 
-<section class="pnk"><div class="wrap">
-  <h2>What to bring</h2>
-  <p>The organizers provide no equipment, and meals are not provided.</p>
+<section class="pnk" id="bring"><div class="wrap">
+  <span class="kick">What to bring</span>
+  <h2 class="rv">Pack like it's a trip.</h2>
+  <p class="note rv">The organizers provide no equipment, and meals are not provided.</p>
   <div class="grid">
-    <div class="box"><h3>Every team</h3><ul>
+    <div class="box ck rv"><h3>Every team</h3><ul>
       <li>Laptops and chargers for everyone who will code</li>
       <li>Extension boards. Power points are limited.</li>
       <li>Phones and chargers (sensors, camera, hotspot)</li>
       <li>College ID cards</li>
       <li>Water bottle, light jacket, personal items for the night</li>
       <li>Your own food, or plan to order in</li></ul></div>
-    <div class="box"><h3>Hardware teams</h3><ul>
+    <div class="box ck rv"><h3>Hardware teams</h3><ul>
       <li>Microcontrollers, sensors, motors, buzzers, wires, batteries</li>
       <li>Screwdriver, tape, wire cutters</li>
       <li>Old gadgets, spare parts, cardboard</li>
       <li>Lab kits, if arranged with a faculty member beforehand</li></ul></div>
-    <div class="box"><h3>Stay sane</h3><ul>
+    <div class="box ck rv"><h3>Stay sane</h3><ul>
       <li>Install tools and offline docs before the event.</li>
       <li>Back up often with Git or a cloud drive.</li>
       <li>Keep a mobile hotspot ready.</li>
@@ -201,43 +239,47 @@ footer .wrap{padding-top:40px;padding-bottom:40px}.co{display:grid;gap:14px;marg
   </div>
 </div></section>
 
-<section class="blk" id="register"><div class="wrap">
-  <h2>Register your team</h2>
-  <p class="lead">4 members, one theme. ₹50 per member, ₹200 per team.</p>
-  <form id="f" novalidate>
-    <label for="team">Team name</label>
-    <input type="text" id="team" autocomplete="off" required>
-    <label>Team members (all 4)</label>
-    <div class="mem">
-      <input type="text" aria-label="Member 1 name" placeholder="Member 1 (team lead)" required>
-      <input type="text" aria-label="Member 2 name" placeholder="Member 2" required>
-      <input type="text" aria-label="Member 3 name" placeholder="Member 3" required>
-      <input type="text" aria-label="Member 4 name" placeholder="Member 4" required>
+<section class="dots" id="register"><div class="wrap">
+  <span class="kick">Register</span>
+  <h2 class="rv">Register your team.</h2>
+  <div class="reg">
+    <div class="price rv"><b>₹200</b><p>per team · ₹50 × 4 members</p><p>4 members, one theme. Send your details on WhatsApp and pay as the coordinator instructs.</p></div>
+    <div class="rv">
+      <form id="f" novalidate>
+        <label for="team">Team name</label>
+        <input type="text" id="team" autocomplete="off" required>
+        <label>Team members (all 4)</label>
+        <div class="mem">
+          <input type="text" aria-label="Member 1 name" placeholder="Member 1 (team lead)" required>
+          <input type="text" aria-label="Member 2 name" placeholder="Member 2" required>
+          <input type="text" aria-label="Member 3 name" placeholder="Member 3" required>
+          <input type="text" aria-label="Member 4 name" placeholder="Member 4" required>
+        </div>
+        <label for="email">Team lead email</label>
+        <input type="email" id="email" autocomplete="email" required>
+        <label for="dept">Team lead department</label>
+        <input type="text" id="dept" autocomplete="off" placeholder="e.g. CSE" required>
+        <label>Phone numbers (Member 1 and Member 2)</label>
+        <div class="mem2">
+          <input type="tel" id="p1" inputmode="tel" aria-label="Member 1 phone number" placeholder="Member 1 phone" required>
+          <input type="tel" id="p2" inputmode="tel" aria-label="Member 2 phone number" placeholder="Member 2 phone" required>
+        </div>
+        <fieldset><legend>Your theme (pick one)</legend>
+          <label class="opt"><input type="radio" name="theme" value="Theme 1: Useless Hardware"><span><b>Theme 1: Useless Hardware</b>A gadget nobody asked for</span></label>
+          <label class="opt"><input type="radio" name="theme" value="Theme 2: Over-Engineered Solutions"><span><b>Theme 2: Over-Engineered Solutions</b>A simple task, made absurdly complex</span></label>
+          <label class="opt"><input type="radio" name="theme" value="Theme 3: Useless Software"><span><b>Theme 3: Useless Software</b>An app, bot or game with no point</span></label>
+        </fieldset>
+        <div class="fee"><span>Registration fee (₹50 × 4 members)</span><b>₹200</b></div>
+        <div class="err" id="err" role="alert"></div>
+        <button class="btn" type="submit">Send registration</button>
+      </form>
+      <div id="done" class="box" style="margin-top:20px">
+        <h3>Almost done</h3>
+        <p>Send this message to the coordinator on WhatsApp and pay the ₹200 team fee as they instruct. Your spot is confirmed once they reply.</p>
+        <pre id="msg"></pre>
+        <div class="row"><a class="btn pk" id="wa" target="_blank" rel="noopener" href="#">Send on WhatsApp</a><button class="btn" type="button" id="cp">Copy details</button></div>
+      </div>
     </div>
-    <label for="email">Team lead email</label>
-    <input type="email" id="email" autocomplete="email" required>
-    <label for="dept">Team lead department</label>
-    <input type="text" id="dept" autocomplete="off" placeholder="e.g. CSE" required>
-    <label>Phone numbers (Member 1 and Member 2)</label>
-    <div class="mem2">
-      <input type="tel" id="p1" inputmode="tel" aria-label="Member 1 phone number" placeholder="Member 1 phone" required>
-      <input type="tel" id="p2" inputmode="tel" aria-label="Member 2 phone number" placeholder="Member 2 phone" required>
-    </div>
-    <fieldset><legend>Your theme (pick one)</legend>
-      <label class="opt"><input type="radio" name="theme" value="Theme 1: Useless Hardware"><span><b>Theme 1: Useless Hardware</b>A gadget nobody asked for</span></label>
-      <label class="opt"><input type="radio" name="theme" value="Theme 2: Over-Engineered Solutions"><span><b>Theme 2: Over-Engineered Solutions</b>A simple task, made absurdly complex</span></label>
-      <label class="opt"><input type="radio" name="theme" value="Theme 3: Useless Software"><span><b>Theme 3: Useless Software</b>An app, bot or game with no point</span></label>
-    </fieldset>
-    <div class="fee"><span>Registration fee (₹50 × 4 members)</span><b>₹200</b></div>
-    <div class="err" id="err" role="alert"></div>
-    <button class="btn" type="submit">Send registration</button>
-  </form>
-
-  <div id="done" class="box" style="margin-top:20px">
-    <h3>Almost done</h3>
-    <p>Send this message to the coordinator on WhatsApp and pay the ₹200 team fee as they instruct. Your spot is confirmed once they reply.</p>
-    <pre id="msg"></pre>
-    <div class="row"><a class="btn pk" id="wa" target="_blank" rel="noopener" href="#">Send on WhatsApp</a><button class="btn" type="button" id="cp">Copy details</button></div>
   </div>
 </div></section>
 
@@ -253,6 +295,9 @@ footer .wrap{padding-top:40px;padding-bottom:40px}.co{display:grid;gap:14px;marg
 
 <script>
 (function(){
+  var rv=document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{threshold:.12});rv.forEach(function(r){io.observe(r)})}
+  else rv.forEach(function(r){r.classList.add('on')});
   var f=document.getElementById('f'),err=document.getElementById('err'),done=document.getElementById('done'),msg=document.getElementById('msg');
   var TO='918113841677';
   f.addEventListener('submit',function(e){
