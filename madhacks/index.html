@@ -13,9 +13,9 @@
 box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light dark}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--card:#17111a;--cardtx:#f6f0f8}}
 :root[data-theme="dark"]{--card:#17111a;--cardtx:#f6f0f8}
-html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 64px);scroll-behavior:smooth}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 64px)}
 *,*:before,*:after{box-sizing:inherit}
-body{margin:0;background:var(--orchid);color:var(--ink);font:400 17px/1.6 var(--body);overflow-x:hidden}
+html{overflow-x:hidden}body{margin:0;max-width:100%;background:var(--orchid);color:var(--ink);font:400 17px/1.6 var(--body);overflow-x:hidden}
 h1,h2,h3{font-family:var(--disp);font-weight:400;line-height:1.04;margin:0}
 a{color:inherit}ul{margin:0}
 .wrap{max-width:1040px;margin:0 auto;padding:84px 20px;position:relative}
@@ -33,7 +33,7 @@ h2{font-size:clamp(36px,8vw,64px);margin-bottom:16px}
 .bar nav{display:none;gap:22px;font-weight:700;font-size:15px}.bar nav a{text-decoration:none}.bar nav a:hover{color:var(--sun)}
 @media(min-width:820px){.bar nav{display:flex}}
 /* hero */
-.hero{text-align:center}.hero .wrap{padding-top:50px;padding-bottom:0}
+.hero{text-align:center;overflow:hidden}.hero .wrap{padding-top:50px;padding-bottom:56px}
 .hero small{display:block;font-weight:700;color:#fff;font-size:14px;letter-spacing:.04em}
 .fl{position:absolute;font-size:clamp(36px,7vw,72px);opacity:.9;animation:fl 7s ease-in-out infinite;user-select:none;pointer-events:none}
 @keyframes fl{50%{transform:translateY(-18px) rotate(12deg)}}
@@ -49,9 +49,11 @@ h2{font-size:clamp(36px,8vw,64px);margin-bottom:16px}
 .stats li{background:#fff;border:3px solid #000;box-shadow:4px 4px 0 #000;padding:6px 16px;font-weight:700;border-radius:10px}
 .stats b{font:400 22px var(--disp);color:var(--pink);margin-right:6px}
 /* ticker */
-.tick{background:#000;color:var(--sun);font:400 22px var(--disp);padding:12px 0;transform:rotate(-1.4deg);margin:-14px -10px 0;position:relative;z-index:3;overflow:hidden;white-space:nowrap;border-block:3px solid var(--sun)}
-.tick div{display:inline-block;animation:tk 22s linear infinite}
-@keyframes tk{to{transform:translateX(-50%)}}
+.tickw{overflow:hidden;position:relative;z-index:3;padding:18px 0;margin-top:-26px;background:linear-gradient(var(--orchid) 50%,var(--sun) 50%)}
+.tick{background:#000;color:var(--sun);font:400 22px var(--disp);padding:12px 0;transform:rotate(-1.4deg);width:130%;margin-left:-15%;border-block:3px solid var(--sun);display:flex}
+.tk{display:flex;flex:none;width:max-content;animation:tk 18s linear infinite;will-change:transform}
+.tk span{white-space:nowrap;padding-right:.7em}
+@keyframes tk{to{transform:translateX(-100%)}}
 /* about */
 .yel{background:var(--sun)}.blk{background:#000;color:#fff}.pnk{background:var(--pink);color:#fff}
 .steps{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));margin-top:10px}
@@ -101,7 +103,7 @@ footer .wrap{padding-top:56px;padding-bottom:40px}.co{display:grid;gap:16px;marg
 @media(min-width:640px){.co{grid-template-columns:repeat(3,1fr)}}
 .co div{border-top:3px solid var(--sun);padding-top:8px}.co b{display:block;font-size:18px}.co span{color:#ccc;font-size:14px}
 .js .rv{opacity:0;transform:translateY(28px);transition:opacity .6s,transform .6s}.js .rv.on{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}.js .rv{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.fl,.stick{animation:none}.js .rv{opacity:1;transform:none;transition:none}}
 </style>
 </head>
 <body>
@@ -125,7 +127,7 @@ footer .wrap{padding-top:56px;padding-bottom:40px}.co{display:grid;gap:16px;marg
     <a class="btn" href="#register">Register your team</a>
   </div>
 </header>
-<div class="tick" aria-hidden="true"><div>USELESS ★ BUT IT WORKS ★ OVER-ENGINEERED ★ NOBODY ASKED ★ 24 HOURS ★ USELESS ★ BUT IT WORKS ★ OVER-ENGINEERED ★ NOBODY ASKED ★ 24 HOURS ★ USELESS ★ BUT IT WORKS ★ OVER-ENGINEERED ★ NOBODY ASKED ★ 24 HOURS ★ </div></div>
+<div class="tickw" aria-hidden="true"><div class="tick"><div class="tk"><span>USELESS ★ BUT IT WORKS ★ OVER-ENGINEERED ★ NOBODY ASKED ★ 24 HOURS ★</span><span>USELESS ★ BUT IT WORKS ★ OVER-ENGINEERED ★ NOBODY ASKED ★ 24 HOURS ★</span><span>USELESS ★ BUT IT WORKS ★ OVER-ENGINEERED ★ NOBODY ASKED ★ 24 HOURS ★</span></div><div class="tk"><span>USELESS ★ BUT IT WORKS ★ OVER-ENGINEERED ★ NOBODY ASKED ★ 24 HOURS ★</span><span>USELESS ★ BUT IT WORKS ★ OVER-ENGINEERED ★ NOBODY ASKED ★ 24 HOURS ★</span><span>USELESS ★ BUT IT WORKS ★ OVER-ENGINEERED ★ NOBODY ASKED ★ 24 HOURS ★</span></div></div></div>
 
 <section class="yel" id="about"><div class="wrap rv">
   <span class="kick">About</span>
