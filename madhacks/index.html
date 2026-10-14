@@ -59,8 +59,8 @@ h2{font-size:clamp(34px,9vw,58px);margin-bottom:20px}
 /* form */
 form{background:var(--card);color:var(--cardtx);border:4px solid #000;padding:22px 18px;border-radius:6px 28px 6px 28px;box-shadow:8px 8px 0 #000}
 label,legend{display:block;font-weight:700;margin:16px 0 6px;padding:0}
-input[type=text]{width:100%;font:500 17px var(--body);padding:12px;border:2px solid #000;border-radius:6px;background:#fff;color:#111}
-.mem{display:grid;gap:10px;grid-template-columns:1fr}@media(min-width:560px){.mem{grid-template-columns:1fr 1fr}}
+input[type=text],input[type=email],input[type=tel]{width:100%;font:500 17px var(--body);padding:12px;border:2px solid #000;border-radius:6px;background:#fff;color:#111}
+.mem,.mem2{display:grid;gap:10px;grid-template-columns:1fr}@media(min-width:560px){.mem,.mem2{grid-template-columns:1fr 1fr}}
 fieldset{border:0;padding:0;margin:0}
 .opt{display:flex;gap:12px;align-items:flex-start;border:3px solid #000;border-radius:8px;padding:12px;margin:8px 0;cursor:pointer;background:#fff;color:#111;font-weight:500}
 .opt input{margin-top:5px;width:20px;height:20px;accent-color:#f0558e;flex:none}
@@ -214,6 +214,15 @@ footer .wrap{padding-top:40px;padding-bottom:40px}.co{display:grid;gap:14px;marg
       <input type="text" aria-label="Member 3 name" placeholder="Member 3" required>
       <input type="text" aria-label="Member 4 name" placeholder="Member 4" required>
     </div>
+    <label for="email">Team lead email</label>
+    <input type="email" id="email" autocomplete="email" required>
+    <label for="dept">Team lead department</label>
+    <input type="text" id="dept" autocomplete="off" placeholder="e.g. CSE" required>
+    <label>Phone numbers (Member 1 and Member 2)</label>
+    <div class="mem2">
+      <input type="tel" id="p1" inputmode="tel" aria-label="Member 1 phone number" placeholder="Member 1 phone" required>
+      <input type="tel" id="p2" inputmode="tel" aria-label="Member 2 phone number" placeholder="Member 2 phone" required>
+    </div>
     <fieldset><legend>Your theme (pick one)</legend>
       <label class="opt"><input type="radio" name="theme" value="Theme 1: Useless Hardware"><span><b>Theme 1: Useless Hardware</b>A gadget nobody asked for</span></label>
       <label class="opt"><input type="radio" name="theme" value="Theme 2: Over-Engineered Solutions"><span><b>Theme 2: Over-Engineered Solutions</b>A simple task, made absurdly complex</span></label>
@@ -253,9 +262,14 @@ footer .wrap{padding-top:40px;padding-bottom:40px}.co{display:grid;gap:14px;marg
     var t=f.querySelector('input[name=theme]:checked');
     if(!team){err.textContent='Enter your team name.';return}
     if(m.some(function(x){return !x})){err.textContent='Enter the names of all 4 members.';return}
+    var em=document.getElementById('email').value.trim(),dp=document.getElementById('dept').value.trim(),p1=document.getElementById('p1').value.trim(),p2=document.getElementById('p2').value.trim();
+    var okp=function(p){return p.replace(/\D/g,'').length>=10};
+    if(!/^\S+@\S+\.\S+$/.test(em)){err.textContent='Enter a valid team lead email.';return}
+    if(!dp){err.textContent='Enter the team lead department.';return}
+    if(!okp(p1)||!okp(p2)){err.textContent='Enter 10-digit phone numbers for Member 1 and Member 2.';return}
     if(!t){err.textContent='Pick one theme.';return}
     err.textContent='';
-    var text='MAD HACKS 2026 registration\nTeam: '+team+'\nMembers:\n'+m.map(function(n,i){return (i+1)+'. '+n}).join('\n')+'\nTheme: '+t.value+'\nFee: Rs 200 (Rs 50 x 4 members)';
+    var text='MAD HACKS 2026 registration\nTeam: '+team+'\nMembers:\n'+m.map(function(n,i){return (i+1)+'. '+n}).join('\n')+'\nTeam lead email: '+em+'\nTeam lead department: '+dp+'\nPhone (Member 1): '+p1+'\nPhone (Member 2): '+p2+'\nTheme: '+t.value+'\nFee: Rs 200 (Rs 50 x 4 members)';
     msg.textContent=text;
     document.getElementById('wa').href='https://wa.me/'+TO+'?text='+encodeURIComponent(text);
     done.style.display='block';f.style.display='none';
