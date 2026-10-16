@@ -37,6 +37,8 @@ h2{font-size:clamp(36px,8vw,64px);margin-bottom:16px}
 .hero small{display:block;font-weight:700;color:#fff;font-size:14px;letter-spacing:.04em}
 .fl{position:absolute;font-size:clamp(36px,7vw,72px);opacity:.9;animation:fl 7s ease-in-out infinite;user-select:none;pointer-events:none}
 @keyframes fl{50%{transform:translateY(-18px) rotate(12deg)}}
+.hero small.clg{font:400 clamp(18px,4.6vw,30px)/1.15 var(--disp);color:#fff;letter-spacing:.02em;text-shadow:3px 3px 0 #000;margin-bottom:8px}
+.hero small.dpt{color:var(--sun);text-shadow:1px 1px 0 #000}
 .disc{background:#000;border-radius:50%;max-width:500px;margin:24px auto 0;padding:15% 6%;position:relative;box-shadow:0 0 0 10px rgba(255,255,255,.25)}
 .strip{display:block;font-family:var(--disp);padding:.06em .3em;margin:0 auto;width:fit-content;clip-path:polygon(0 12%,6% 0,30% 8%,62% 0,94% 6%,100% 0,97% 50%,100% 100%,70% 92%,38% 100%,8% 93%,0 100%,3% 52%)}
 .s1{background:var(--sun);color:#000;font-size:clamp(54px,17vw,118px);transform:rotate(-2deg)}
@@ -86,6 +88,8 @@ h2{font-size:clamp(36px,8vw,64px);margin-bottom:16px}
 .price b{display:block;font:400 76px/1 var(--disp);color:var(--sun)}.price p{margin:8px 0 0}
 form{background:var(--card);color:var(--cardtx);border:4px solid #000;padding:24px 20px;border-radius:6px 28px 6px 28px;box-shadow:8px 8px 0 #000}
 label,legend{display:block;font-weight:700;margin:16px 0 6px;padding:0}form>label:first-child{margin-top:0}
+textarea{width:100%;min-height:170px;resize:vertical;font:500 16px/1.5 var(--body);padding:12px;border:2px solid #000;border-radius:6px;background:#fff;color:#111}
+.wc{font-weight:700;font-size:14px;margin-top:6px}.wc.bad{color:#d11}
 input[type=text],input[type=email],input[type=tel]{width:100%;font:500 17px var(--body);padding:12px;border:2px solid #000;border-radius:6px;background:#fff;color:#111}
 .mem,.mem2{display:grid;gap:10px;grid-template-columns:1fr}@media(min-width:560px){.mem,.mem2{grid-template-columns:1fr 1fr}}
 fieldset{border:0;padding:0;margin:0}
@@ -115,10 +119,10 @@ footer .wrap{padding-top:56px;padding-bottom:40px}.co{display:grid;gap:16px;marg
   <span class="fl" style="left:4%;top:12%">⚙️</span><span class="fl" style="right:5%;top:30%;animation-delay:-2s">🔧</span>
   <span class="fl" style="left:8%;top:52%;animation-delay:-4s">💻</span><span class="fl" style="right:9%;top:6%;animation-delay:-1s">🤖</span>
   <div class="wrap">
-    <small>BEARYS INSTITUTE OF TECHNOLOGY, MANGALORE</small>
-    <small>DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING</small>
+    <small class="clg">BEARYS INSTITUTE OF TECHNOLOGY, MANGALORE</small>
+    <small class="dpt">DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING</small>
     <div class="disc">
-      <div class="stick">28TH<br>OCT<br>2026</div>
+      <div class="stick">28th & 29th<br>OCT<br>2026</div>
       <h1><span class="strip s1">MAD</span><span class="strip s2">HACKS</span></h1>
       <div class="yr">2026</div>
     </div>
@@ -271,6 +275,9 @@ footer .wrap{padding-top:56px;padding-bottom:40px}.co{display:grid;gap:16px;marg
           <label class="opt"><input type="radio" name="theme" value="Theme 2: Over-Engineered Solutions"><span><b>Theme 2: Over-Engineered Solutions</b>A simple task, made absurdly complex</span></label>
           <label class="opt"><input type="radio" name="theme" value="Theme 3: Useless Software"><span><b>Theme 3: Useless Software</b>An app, bot or game with no point</span></label>
         </fieldset>
+        <label for="idea">Your craziest idea (abstract, 100 to 200 words)</label>
+        <textarea id="idea" placeholder="Describe your craziest, most useless idea: what it is, how it works, and why nobody needs it."></textarea>
+        <div class="wc" id="wc">0 / 200 words</div>
         <div class="fee"><span>Registration fee (₹50 × 4 members)</span><b>₹200</b></div>
         <div class="err" id="err" role="alert"></div>
         <button class="btn" type="submit">Send registration</button>
@@ -302,6 +309,9 @@ footer .wrap{padding-top:56px;padding-bottom:40px}.co{display:grid;gap:16px;marg
   else rv.forEach(function(r){r.classList.add('on')});
   var f=document.getElementById('f'),err=document.getElementById('err'),done=document.getElementById('done'),msg=document.getElementById('msg');
   var TO='918113841677';
+  var words=function(x){var m=x.trim().match(/\S+/g);return m?m.length:0};
+  var ia=document.getElementById('idea'),wc=document.getElementById('wc');
+  ia.addEventListener('input',function(){var n=words(ia.value);wc.textContent=n+' / 200 words'+(n<100?' (minimum 100)':'');wc.className='wc'+(n>200||n<100&&n>0?' bad':'')});
   f.addEventListener('submit',function(e){
     e.preventDefault();
     var team=document.getElementById('team').value.trim();
@@ -315,8 +325,10 @@ footer .wrap{padding-top:56px;padding-bottom:40px}.co{display:grid;gap:16px;marg
     if(!dp){err.textContent='Enter the team lead department.';return}
     if(!okp(p1)||!okp(p2)){err.textContent='Enter 10-digit phone numbers for Member 1 and Member 2.';return}
     if(!t){err.textContent='Pick one theme.';return}
+    var idea=document.getElementById('idea').value.trim(),wn=words(idea);
+    if(wn<100||wn>200){err.textContent='Your idea must be 100 to 200 words. You have '+wn+'.';return}
     err.textContent='';
-    var text='MAD HACKS 2026 registration\nTeam: '+team+'\nMembers:\n'+m.map(function(n,i){return (i+1)+'. '+n}).join('\n')+'\nTeam lead email: '+em+'\nTeam lead department: '+dp+'\nPhone (Member 1): '+p1+'\nPhone (Member 2): '+p2+'\nTheme: '+t.value+'\nFee: Rs 200 (Rs 50 x 4 members)';
+    var text='MAD HACKS 2026 registration\nTeam: '+team+'\nMembers:\n'+m.map(function(n,i){return (i+1)+'. '+n}).join('\n')+'\nTeam lead email: '+em+'\nTeam lead department: '+dp+'\nPhone (Member 1): '+p1+'\nPhone (Member 2): '+p2+'\nTheme: '+t.value+'\nCraziest idea ('+wn+' words):\n'+idea+'\nFee: Rs 200 (Rs 50 x 4 members)';
     msg.textContent=text;
     document.getElementById('wa').href='https://wa.me/'+TO+'?text='+encodeURIComponent(text);
     done.style.display='block';f.style.display='none';
