@@ -122,7 +122,7 @@ footer .wrap{padding-top:56px;padding-bottom:40px}.co{display:grid;gap:16px;marg
     <small class="clg">BEARYS INSTITUTE OF TECHNOLOGY, MANGALORE</small>
     <small class="dpt">DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING</small>
     <div class="disc">
-      <div class="stick">28th & 29th<br>OCT<br>2026</div>
+      <div class="stick">28TH-29TH<br>OCT<br>2026</div>
       <h1><span class="strip s1">MAD</span><span class="strip s2">HACKS</span></h1>
       <div class="yr">2026</div>
     </div>
@@ -328,7 +328,8 @@ footer .wrap{padding-top:56px;padding-bottom:40px}.co{display:grid;gap:16px;marg
     var idea=document.getElementById('idea').value.trim(),wn=words(idea);
     if(wn<100||wn>200){err.textContent='Your idea must be 100 to 200 words. You have '+wn+'.';return}
     err.textContent='';
-    var text='MAD HACKS 2026 registration\nTeam: '+team+'\nMembers:\n'+m.map(function(n,i){return (i+1)+'. '+n}).join('\n')+'\nTeam lead email: '+em+'\nTeam lead department: '+dp+'\nPhone (Member 1): '+p1+'\nPhone (Member 2): '+p2+'\nTheme: '+t.value+'\nCraziest idea ('+wn+' words):\n'+idea+'\nFee: Rs 200 (Rs 50 x 4 members)';
+    var L='━━━━━━━━━━━━━━━━━━';
+    var text='*MAD HACKS 2026*\n*REGISTRATION*\n'+L+'\n\n*TEAM*\n'+team+'\n\n*MEMBERS*\n'+m.map(function(n,i){return (i+1)+'. '+n+(i==0?' (Team Lead)':'')}).join('\n')+'\n\n'+L+'\n\n*CONTACT*\nEmail: '+em+'\nDepartment: '+dp+'\nMember 1 phone: '+p1+'\nMember 2 phone: '+p2+'\n\n'+L+'\n\n*THEME*\n'+t.value+'\n\n*CRAZIEST IDEA* ('+wn+' words)\n'+idea+'\n\n'+L+'\n\n*FEE*\nRs 200 (Rs 50 x 4 members)\n'+L;
     msg.textContent=text;
     document.getElementById('wa').href='https://wa.me/'+TO+'?text='+encodeURIComponent(text);
     done.style.display='block';f.style.display='none';
